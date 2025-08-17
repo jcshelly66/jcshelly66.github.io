@@ -1,32 +1,19 @@
 ---
 ---
 
+// Forest theme variable overrides
+$background-color: #1b2e1b;
+$text-color: #e0f2e9;
+$link-color: #7fc97f;
+$brand-color: #b2df8a;
+$header-bg-color: #274d27;
+$code-background-color: #263826;
+
+// Import Minima theme styles
 @import "{{ site.theme }}";
 
-// Forest theme customizations
-body {
-  background: #1b2e1b;
-  color: #e0f2e9;
-}
-
-a {
-  color: #7fc97f;
-}
-
-header, footer {
-  background: #274d27;
-  color: #e0f2e9;
-}
-
-.site-title, .site-description {
-  color: #b2df8a;
-}
-
-.post-title {
-  color: #66a366;
-}
-
+// Additional custom styles (if needed)
 code, pre {
-  background: #263826;
-  color: #b2df8a;
+  background: $code-background-color;
+  color: $brand-color;
 }
