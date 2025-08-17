@@ -1,0 +1,17 @@
+.site-header {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+
+  a, a:visited {
+    color: $header-text-color;
+  }
+}
+
+.site-footer {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+
+  a, a:visited {
+    color: $header-text-color;
+  }
+}
