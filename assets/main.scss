@@ -2,32 +2,178 @@
 ---
 
 // Forest theme variable overrides
-// Forest theme variables
-$background-color: #1b2e1b !default;
+// These override Minima's default variables
 $text-color: #e0f2e9 !default;
-$header-text-color: #cddcbe !default; // Pale green for header text
+$background-color: #022200 !default;
+$header-text-color: #e6fdcf !default; // Pale green for header text
 $link-base-color: #7fc97f !default;
 $brand-color: #b2df8a !default;
 $header-bg-color: #274d27 !default;
 $code-background-color: #263826 !default;
 
+// Additional forest variables for consistency
+$grey-color: #7a8a7a !default;
+$grey-color-light: lighten(#7a8a7a, 20%) !default;
+$grey-color-dark: darken(#7a8a7a, 25%) !default;
+$border-color: #3a5a3a !default;
+
 // Import Minima theme styles
 @import "minima";
 
-// Additional custom styles (if needed)
-//code, pre {
-//  background: $code-background-color;
-//  color: $brand-color;
-//}
-
-/* Custom styles without theme import */
-/* This works with remote themes that don't expose proper import paths */
-
+// Custom forest theme overrides
+/* Header styling */
 .site-header {
   background-color: $header-bg-color;
   color: $header-text-color;
+  border-bottom: 2px solid darken($header-bg-color, 15%);
+  
+  .site-title {
+    color: $brand-color;
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    
+    &:hover {
+      color: lighten($brand-color, 10%);
+      text-decoration: none;
+    }
+  }
+  
+  .site-nav .page-link {
+    color: $header-text-color;
+    transition: all 0.3s ease;
+    
+    &:hover {
+      color: $brand-color;
+      text-decoration: none;
+    }
+  }
+}
 
+/* Body and content */
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+/* Links throughout the site */
+a {
+  color: $link-base-color;
+  
+  &:visited {
+    color: darken($link-base-color, 15%);
+  }
+  
+  &:hover {
+    color: lighten($link-base-color, 15%);
+    text-decoration: underline;
+  }
+}
+
+/* Post styling */
+.post-title {
+  color: $brand-color;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.post-link {
+  color: $link-base-color;
+  font-weight: 400;
+  
+  &:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
+}
+
+.post-meta {
+  color: $grey-color-light;
+  font-style: italic;
+}
+
+/* Code blocks */
+code, pre {
+  background-color: $code-background-color;
+  color: $brand-color;
+  border: 1px solid darken($code-background-color, 10%);
+}
+
+pre {
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid $link-base-color;
+  background-color: rgba(45, 90, 45, 0.1);
+  color: $grey-color-light;
+  padding: 15px 20px;
+  margin: 20px 0;
+}
+
+/* Footer styling */
+.site-footer {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+  border-top: 2px solid darken($header-bg-color, 15%);
+  
   a, a:visited {
     color: $header-text-color;
+    
+    &:hover {
+      color: $brand-color;
+    }
+  }
+  
+  .footer-heading {
+    color: $brand-color;
+  }
+}
+
+/* Tables */
+table {
+  border: 1px solid $border-color;
+  
+  th {
+    background-color: $header-bg-color;
+    color: $header-text-color;
+    border: 1px solid darken($header-bg-color, 10%);
+  }
+  
+  td {
+    border: 1px solid $border-color;
+  }
+  
+  tr:nth-child(even) {
+    background-color: rgba(45, 90, 45, 0.1);
+  }
+}
+
+/* Content wrapper */
+.page-content {
+  background: linear-gradient(180deg, 
+    $background-color 0%, 
+    lighten($background-color, 3%) 50%, 
+    $background-color 100%);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  .site-header {
+    .site-nav {
+      background-color: rgba(39, 77, 39, 0.9);
+      border-radius: 4px;
+      padding: 10px;
+      
+      .page-link {
+        display: block;
+        padding: 8px;
+        margin: 2px 0;
+        border-radius: 3px;
+        
+        &:hover {
+          background-color: rgba(178, 223, 138, 0.2);
+        }
+      }
+    }
   }
 }
