@@ -1,0 +1,14 @@
+/* Override Minima colors */
+body {
+  background-color: #222 !important;
+  color: #f5f5f5 !important;
+}
+
+a {
+  color: #ff9800 !important;
+}
+
+.site-header {
+  background: #333 !important;
+  border-bottom: 2px solid #ff9800 !important;
+}
