@@ -30,11 +30,13 @@ github_username:  jcshelly66
 dark_mode_default: false
 
 # Build settings
+#remote_theme: jekyll/minima@1fe0fbf
 theme: minima
 plugins:
   - jekyll-feed
-minima:
-  skin: dark
+  - jekyll-remote-theme
+#minima:
+#  skin: dark
 
 # Exclude from processing.
 # The following items will not be processed, by default.

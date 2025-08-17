@@ -1,0 +1,33 @@
+---
+---
+
+// Forest theme variable overrides
+// Forest theme variables
+$background-color: #1b2e1b !default;
+$text-color: #e0f2e9 !default;
+$header-text-color: #cddcbe !default; // Pale green for header text
+$link-base-color: #7fc97f !default;
+$brand-color: #b2df8a !default;
+$header-bg-color: #274d27 !default;
+$code-background-color: #263826 !default;
+
+// Import Minima theme styles
+@import "minima";
+
+// Additional custom styles (if needed)
+//code, pre {
+//  background: $code-background-color;
+//  color: $brand-color;
+//}
+
+/* Custom styles without theme import */
+/* This works with remote themes that don't expose proper import paths */
+
+.site-header {
+  background-color: $header-bg-color;
+  color: $header-text-color;
+
+  a, a:visited {
+    color: $header-text-color;
+  }
+}
